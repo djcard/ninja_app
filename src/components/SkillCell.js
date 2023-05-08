@@ -10,9 +10,7 @@ const colorCode = [
 ];
 
 const SkillCell = (props) => {
-
-
-    return <td style={{"backgroundColor":colorCode[props.score]}}>{props.score}</td>
+    return <td className={`level` + props.score} >{props.score}</td>
 }
 
 export default SkillCell

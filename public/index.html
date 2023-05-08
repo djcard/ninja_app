@@ -33,8 +33,33 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <style>
+      td { text-align: center}
+      .level1{ background-color: yellow; color:black}
+      .level2{ background-color: blue; color:white}
+      .level3{ background-color: green; color:white}
+      .level4{ background-color: purple; color:white}
+      .level5{ background-color: gold; color:white}
+      .level6{ background-color: orange; color:white}
+    </style>
+    <script>
+      function onLoad() {
+        for (var x = 0; x < document.styleSheets.length; x = x + 1) {
+          if (document.styleSheets[x].cssRules[0].cssText.toString().search(":root { --bs-blue:") > -1) {
+            console.dir(document.styleSheets[x]);
+            for(var y = 0; y< document.styleSheets[x].cssRules.length; y=y+1){
+              console.dir(y);
+              if(document.styleSheets[x].cssRules[y].selectorText===".table > :not(caption) > * > *"){
+                console.dir("deleting " + y);
+                document.styleSheets[x].deleteRule(y);
+              }
+            }
+          }
+        }
+      }
+    </script>
   </head>
-  <body>
+  <body onload="onLoad()">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--

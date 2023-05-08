@@ -1,6 +1,11 @@
 
 export const isolateStudentResults = (studentId, studentSkills) => {
-    return studentSkills?.filter((studentSkill)=>{
-        return studentSkill.id===studentId;
-    })[0];
+    let retme = {};
+    studentSkills?.filter((studentSkill)=>{
+        return studentSkill.studentId===studentId;
+    })
+    .forEach((studentSkill)=>{
+        retme[studentSkill.skillCode]=studentSkill.skillLevel;
+    });
+    return retme;
 }

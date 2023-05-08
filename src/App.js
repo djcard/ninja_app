@@ -55,7 +55,7 @@ function App() {
   return (
 
     <div className="Container">
-        <Table striped bordered hover>
+        <Table bordered>
             <thead>
                 <tr>
                     <th>Student</th>
