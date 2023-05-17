@@ -58,7 +58,7 @@ function App() {
         <Table bordered>
             <thead>
                 <tr>
-                    <th>Student</th>
+                    <th>Student Name</th>
                     {
                         skills.map((skill)=>{
                            return <th>{skill.name}</th>
