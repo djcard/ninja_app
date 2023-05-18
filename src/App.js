@@ -20,7 +20,7 @@ function App() {
   const [studentSkills, setStudentSkills] = useState([])
 
   useEffect(()=>{
-    axios.get(process.env.REACT_APP_API_URL + "/students")
+    axios.get(process.env.REACT_APP_API_URL + "/ninja/students")
         .then((evt) => {
           setStudents(evt.data.data)
         })
@@ -29,7 +29,7 @@ function App() {
           console.dir(evt);
         });
 
-      axios.get(process.env.REACT_APP_API_URL + "/skills")
+      axios.get(process.env.REACT_APP_API_URL + "/ninja//skills")
           .then((evt) => {
               setSkills(evt.data.data)
           })
@@ -38,7 +38,7 @@ function App() {
               console.dir(evt);
           });
 
-      axios.get(process.env.REACT_APP_API_URL + "/students/skills")
+      axios.get(process.env.REACT_APP_API_URL + "/ninja//students/skills")
           .then((evt) => {
               console.dir("Student Skills");
               console.dir(evt.data.data);
